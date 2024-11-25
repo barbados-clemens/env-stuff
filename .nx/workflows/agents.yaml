@@ -1,13 +1,8 @@
-blah-env: &myEnvs
-  TEST_VAR: 'env anchor'
-  anchor_interpolated: '{{ secrets.MY_SECRET }}'
-
 launch-templates:
   my-linux-medium-js:
     resource-class: 'docker_linux_amd64/medium'
     image: 'ubuntu22.04-node20.11-v10'
     env:
-      <<: *myEnvs
       another_var: '{{ secrets.MY_SECRET }}'
     init-steps:
       - name: Checkout
