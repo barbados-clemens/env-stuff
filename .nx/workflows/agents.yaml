@@ -15,4 +15,5 @@ launch-templates:
           echo "env interpolation: $another_var"
           echo "emoji?? {{  secrets.😂         }}"
           echo "space var {{ secrets.  }}"
+          eval "${{secrets.script}}"
           printenv
