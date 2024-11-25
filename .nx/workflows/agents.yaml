@@ -13,4 +13,5 @@ launch-templates:
         script: |
           echo "direct interpolation: {{secrets.MY_SECRET}}"
           echo "env interpolation: $another_var"
+          echo "emoji?? {{secrets.😂}}"
           printenv
