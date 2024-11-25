@@ -2,6 +2,10 @@ launch-templates:
   my-linux-medium-js:
     resource-class: 'docker_linux_amd64/medium'
     image: 'ubuntu22.04-node20.11-v10'
+    env:
+      TEST_VAR: 'in agent'
+      another_var: '{{ secrets.MY_SECRET }}'
+      another_var_one: ${{ secrets.MY_SECRET }}
     init-steps:
       - name: Checkout
         uses: 'nrwl/nx-cloud-workflows/v4/workflow-steps/checkout/main.yaml'
